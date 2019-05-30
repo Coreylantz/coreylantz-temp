@@ -18,6 +18,14 @@
       --font-primary: 'Yanone Kaffeesatz', sans-serif;;
     }
 
+    @keyframes dogTilt {
+      0% {transform: rotate(0deg);}
+      30% {transform: rotate(15deg);}
+      50% {transform: rotate(30deg);}
+      80% {transform: rotate(-30deg);}
+      100% {transform: rotate(0deg);}
+    }
+
     body {
       align-items: center;
       background-color: var(--background-color-primary);
@@ -60,6 +68,9 @@
       height: 5rem;
       fill: var(--logo-color);
       width: 5rem;
+      animation-name: dogTilt;
+      animation-duration: 4s;
+      animation-timing-function: ease-in;
     }
 
     .flex-container {
@@ -82,8 +93,16 @@
       })
     }
 
+    const shuffle = (a) => {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+    return a;
+    }
+
     const getRandomColorCombo = () => {
-      const randColors = colors[Math.floor(Math.random() * colors.length)];
+      const randColors = shuffle(colors[Math.floor(Math.random() * colors.length)]);
       changeColor(randColors, variables)
     }
 
