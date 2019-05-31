@@ -5,6 +5,12 @@ self.addEventListener('install', function(event) {
       return cache.addAll(
         [
           'assets/css/style.css',
+          'assets/fonts/Rockwell-Regular-Font.ttf',
+          'assets/fonts/Rockwell-Regular-Font.woff',
+          'assets/fonts/Rockwell-Regular-Font.woff2',
+          'assets/fonts/unicodefuturab.ttf',
+          'assets/fonts/unicodefuturab.woff',
+          'assets/fonts/unicodefuturab.woff2'
         ]
       );
     })
