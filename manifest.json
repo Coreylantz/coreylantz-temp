@@ -44,7 +44,7 @@
     }
   ],
   "start_url": "/?utm_source=homescreen",
-  "background_color": "#e05a47",
-  "theme_color": "#e05a47",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "display": "standalone"
 }
