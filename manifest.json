@@ -3,8 +3,8 @@
   "name": "Corey",
   "icons": [
   {
-  "src":"/favicon.png",
-  "sizes": "192x192",
+  "src":"/images/icon/logo.png",
+  "sizes": "50x50",
   "type": "image/png"
   }
   ],
