@@ -24,6 +24,7 @@ self.addEventListener('fetch', function(event) {
   // console.log('Fetch!');
   // Hard coded
   caches.match('/assets/css/style.css').then(function(response) {
+    console.log(response);
     if (!response) throw Error("No data");
     return response.json();
   }).then(function(data) {

@@ -141,6 +141,16 @@ p {
   display: flex;
 }
 
+.sr-only {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  width: 0.1rem;
+  height: 0.1rem;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 769px) {
   .flex-container {
     flex-direction: column-reverse;
