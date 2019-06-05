@@ -115,8 +115,8 @@ p {
 
 .social-icon {
   fill: var(--logo-color);
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 .social-icon-container a {
