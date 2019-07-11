@@ -24,8 +24,6 @@ self.addEventListener('fetch', function(event) {
   const url = new URL(event.request.url);
   if (staticAssets.indexOf(url.pathname) !== -1) {
     // url.pathname is a string relative to the site's root, 
-    console.log(event.request.url);
     event.respondWith(caches.match(event.request));
   }
 });
-
