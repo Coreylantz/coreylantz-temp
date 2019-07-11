@@ -33,6 +33,16 @@ self.addEventListener('fetch', function(event) {
   const url = new URL(event.request.url);
   if (staticAssets.indexOf(url.pathname) !== -1) {
     // url.pathname is a string relative to the site's root, 
-    event.respondWith(caches.match(event.request));
+    event.respondWith(caches.match(event.request))
+    .then(response => {
+      if (!response) {
+        // No match in caches: any falsy response is no good
+        // This will cause the chained `catch` to be invoked
+        // similar in effect to a rejected `Promise`
+        throw new Error(`${event.request} not found in cache`);
+      }
+      return response; // DO retunr the response if it's OK
+    })
+    .catch(error => fetch(event.request)) // fetch from network if not in the cache
   }
 });
