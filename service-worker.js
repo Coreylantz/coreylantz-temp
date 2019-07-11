@@ -1,6 +1,7 @@
 // service-worker.js
 const cacheName = 'coreyCache';
 const staticAssets = [
+  'index.html',
   '/assets/css/style.css',
   '/assets/fonts/Rockwell-Regular-Font.ttf',
   '/assets/fonts/Rockwell-Regular-Font.woff',
@@ -31,6 +32,15 @@ self.addEventListener("activate", event => {
 });
 self.addEventListener('fetch', function(event) {
   const url = new URL(event.request.url);
+  if (event.request.mode === 'navigate') {
+    event.respondWith(fetch(event.request)
+      .catch(error => {
+        return caches.open('coreyCache')
+          .then(cache => cache.match('index.html'))
+      })
+    )
+  }
+
   if (staticAssets.indexOf(url.pathname) !== -1) {
     // url.pathname is a string relative to the site's root, 
     event.respondWith(caches.match(event.request)
