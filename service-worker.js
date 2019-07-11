@@ -9,6 +9,14 @@ const staticAssets = [
   '/assets/fonts/unicodefuturab.woff',
   '/assets/fonts/unicodefuturab.woff2',
   '/images/icon/favicon.png',
+  '/images/icon/icon-72x72.png',
+  '/images/icon/icon-96x96.png',
+  '/images/icon/icon-128x128.png',
+  '/images/icon/icon-144x144.png',
+  '/images/icon/icon-152x152.png',
+  '/images/icon/icon-192x192.png',
+  '/images/icon/icon-384x384.png',
+  '/images/icon/icon-512x512.png',
 ];
 
 self.addEventListener('install', function(event) {
