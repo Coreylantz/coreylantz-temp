@@ -8,6 +8,7 @@ const staticAssets = [
   '/assets/fonts/unicodefuturab.ttf',
   '/assets/fonts/unicodefuturab.woff',
   '/assets/fonts/unicodefuturab.woff2',
+  '/images/icon/favicon.png',
 ];
 
 self.addEventListener('install', function(event) {
